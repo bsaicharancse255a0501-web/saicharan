@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Registration Form</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#f0f4f8;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    margin:0;
+}
+
+.container{
+    width:450px;
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.2);
+}
+
+h2{
+    text-align:center;
+    color:#333;
+}
+
+label{
+    display:block;
+    margin-top:10px;
+    font-weight:bold;
+}
+
+input, textarea{
+    width:100%;
+    padding:8px;
+    margin-top:5px;
+    border:1px solid #ccc;
+    border-radius:5px;
+    box-sizing:border-box;
+}
+
+.gender{
+    margin-top:5px;
+}
+
+.gender input{
+    width:auto;
+}
+
+.buttons{
+    margin-top:20px;
+    display:flex;
+    justify-content:space-between;
+}
+
+button{
+    width:48%;
+    padding:10px;
+    border:none;
+    border-radius:5px;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.submit{
+    background:#28a745;
+}
+
+.submit:hover{
+    background:#218838;
+}
+
+.reset{
+    background:#dc3545;
+}
+
+.reset:hover{
+    background:#c82333;
+}
+
+#message{
+    display:none;
+    margin-top:20px;
+    text-align:center;
+    color:green;
+    font-size:22px;
+    font-weight:bold;
+}
+</style>
+
+<script>
+function showMessage(event){
+    event.preventDefault();
+    document.getElementById("message").style.display="block";
+}
+</script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Student Registration Form</h2>
+
+<form onsubmit="showMessage(event)">
+
+<label>Name</label>
+<input type="text" placeholder="Enter your name" required>
+
+<label>Roll Number</label>
+<input type="text" placeholder="Enter roll number" required>
+
+<label>Date of Birth</label>
+<input type="date" required>
+
+<label>Gender</label>
+<div class="gender">
+    <input type="radio" name="gender" required> Male
+    <input type="radio" name="gender"> Female
+    <input type="radio" name="gender"> Other
+</div>
+
+<label>Phone Number</label>
+<input type="tel" placeholder="Enter phone number" required>
+
+<label>Email</label>
+<input type="email" placeholder="Enter email" required>
+
+<label>Course</label>
+<input type="text" placeholder="Enter your course" required>
+
+<label>Branch</label>
+<input type="text" placeholder="Enter your branch" required>
+
+<label>Address</label>
+<textarea rows="4" placeholder="Enter your address"></textarea>
+
+<div class="buttons">
+    <button type="submit" class="submit">Submit</button>
+    <button type="reset" class="reset">Reset</button>
+</div>
+
+</form>
+
+<p id="message">✅ Thank You for Registration!</p>
+
+</div>
+
+</body>
+</html>
